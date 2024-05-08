@@ -31,7 +31,15 @@ Using Visual Studio:
 3. In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already.  
 4. Go to src\Config.js and modify the baseURL to point to your instance of ServiceNow.  
 5. Login to Azure & create a resource group to deploy the solution. Copy the tenant-id and resource group name.  
-6. In Visual studio, enter the values copied above in .env.dev file under env folder.  
+6. In Visual studio, create a .env.dev file under env folder & enter the values copied above.  
+# This file includes environment variables that will be committed to git by default.
+
+# Built-in environment variables
+TEAMSFX_ENV=dev
+APP_NAME_SUFFIX=dev
+AZURE_SUBSCRIPTION_ID=
+AZURE_RESOURCE_GROUP_NAME=RG-SNBotME
+RESOURCE_SUFFIX=
 ![alt text](image-6.png)
 7. Using the Teams Toolkit menu, under Lifecycle - choose each of the options Provision & Deploy sequentially. This will create the necessary configuration and deploy the app & bot in Azure within the Resource group created in step 5 above.  
 8. Once the deployment is successfully completed, login to Azure and click on the bot under the resource group.  
