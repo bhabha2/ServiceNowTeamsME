@@ -1,0 +1,170 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.5",
+    "refresh": {
+        "userIds": [],
+        "action": {
+            "type": "Action.Execute",
+            "verb": "refresh",
+            "title": "Refresh",
+            "data": {
+                "number": "${number}"
+            }
+        }
+    },
+    "body": [
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "${short_description}",
+                    "wrap": true,
+                    "size": "Large"
+                },
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "ColumnSet",
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "[${number}](${link})",
+                                            "wrap": true,
+                                            "size": "Large",
+                                            "weight": "Bolder"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Severity: ${severity}",
+                                            "wrap": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "${sys_id}",
+                    "wrap": true,
+                    "isVisible": false
+                },
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Description: \n${description}",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Priority: \n${priority}",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Last Updated By: ${sys_updated_by}",
+                            "wrap": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "ColumnSet",
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Created By: ${sys_created_by}",
+                                            "wrap": true
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "On: ${sys_created_on}",
+                                            "wrap": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                        "type": "ActionSet",
+                        "actions": [
+                        {
+                            "type": "Action.ShowCard",
+                            "title": "Take action",
+                            "card": {
+                                "type": "AdaptiveCard",
+                                "body": [
+                                    {
+                                        "type": "Input.Text",
+                                        "id": "description",
+                                        "placeholder": "Description"
+                                    },
+                                    {
+                                        "type": "Input.Text",
+                                        "id": "priority",
+                                        "label": "Priority",
+                                        "min": 1,
+                                        "max": 7,
+                                        "errorMessage": "Invalid input, use number in range 1-7",
+                                        "placeholder": "Invalid input, use number in range 1-7"
+                                    }
+                                    ],
+                                    "actions": [
+                                            {
+                                                "type": "Action.Execute",
+                                                "title": "Update Incident",
+                                                "verb": "update",
+                                                "data": {
+                                                    "sys_id": "${sys_id}",
+                                                    "number": "${number}",
+                                                    "description": "${description}",
+                                                    "priority": "${priority}",
+                                                    "sys_updated_by": "${sys_updated_by}",
+                                                    "sys_updated_on": "${sys_updated_on}",
+                                                    "sys_created_by": "${sys_created_by}",
+                                                    "sys_created_on": "${sys_created_on}",
+                                                    "severity": "${severity}",
+                                                    "short_description": "${short_description}",
+                                                    "link": "${link}"
+                                                }
+                                            }
+                                        ]
+                                    
+                            }
+                        }
+                    
+                    ]
+                    }
+                    ]
+                }
+            ]
+        }
+    ]
+}

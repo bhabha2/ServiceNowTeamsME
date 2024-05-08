@@ -1,0 +1,125 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "refresh": {
+        "userIds": [],
+        "action": {
+            "type": "Action.Execute",
+            "verb": "refresh",
+            "title": "Refresh",
+            "data": {
+                "number": "${number}"
+            }
+        }
+    },
+    "body": [
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "${short_description}",
+                    "wrap": true,
+                    "size": "Large"
+                },
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "ColumnSet",
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "[${number}](${link})",
+                                            "wrap": true,
+                                            "size": "Large",
+                                            "weight": "Bolder"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Severity: ${severity}",
+                                            "wrap": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "${sys_id}",
+                    "wrap": true,
+                    "isVisible": false
+                },
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Description: \n${description}",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Priority: \n${priority}",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Last Updated By: ${sys_updated_by}",
+                            "wrap": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "ColumnSet",
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Created By: ${sys_created_by}",
+                                            "wrap": true
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "On: ${sys_created_on}",
+                                            "wrap": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Incident updated Successfully!",
+                            "size": "Medium"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,114 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.16",
+    "version": "1.0.8",
+    "id": "cc693e1f-4b2b-475b-8d9d-16ae417bd04b",
+    "packageName": "com.microsoft.teams.extension",
+    "developer": {
+        "name": "Teams App, Inc.",
+        "websiteUrl": "https://www.example.com",
+        "privacyUrl": "https://www.example.com/privacy",
+        "termsOfUseUrl": "https://www.example.com/termofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "ServiceNowBotME",
+        "full": "ServiceNow Incidents Tracker"
+    },
+    "description": {
+        "short": "Fetch Incident details from ServiceNow.",
+        "full": "Fetch ServiceNow Incident information based on search criteria like Incident number, Assigned to & Description."
+    },
+    "accentColor": "#FFFFFF",
+    "bots": [
+        {
+            "botId": "3fbb1ece-9ccc-447f-b167-cc4357f95b42",
+            "scopes": [
+                "personal",
+                "team",
+                "groupchat"
+            ],
+            "isNotificationOnly": false,
+            "supportsFiles": false
+        }
+    ],
+    "composeExtensions": [
+        {
+            "botId": "3fbb1ece-9ccc-447f-b167-cc4357f95b42",
+            "commands": [
+                {
+                    "id": "getIncidentDetails",
+                    "context": [
+                        "compose",
+                        "commandBox"
+                    ],
+                    "description": "Get ServiceNow Incident Details based on Incident Number",
+                    "title": "Find Incident Details",
+                    "type": "query",
+                    "parameters": [
+                        {
+                            "name": "searchValue",
+                            "title": "Incident Number",
+                            "description": "Incident Number to be searched",
+                            "inputType": "text"
+                        }
+                    ]
+                },
+                {
+                    "id": "getIncidentListByShortDescription",
+                    "context": [
+                        "compose",
+                        "commandBox"
+                    ],
+                    "description": "Search & fetch list of ServiceNow Incidents based on Short Description",
+                    "title": "Search Incidents by Description",
+                    "type": "query",
+                    "parameters": [
+                        {
+                            "name": "searchValue",
+                            "title": "Short Description",
+                            "description": "Description of Incidents to be searched",
+                            "inputType": "text"
+                        }
+                    ]
+                },
+                {
+                    "id": "getIncidentListByAssignedTo",
+                    "context": [
+                        "compose",
+                        "commandBox"
+                    ],
+                    "description": "Search & fetch list of ServiceNow Incidents based on Assigned to user",
+                    "title": "List Incidents Assigned to user",
+                    "type": "query",
+                    "parameters": [
+                        {
+                            "name": "searchValue",
+                            "title": "Assigned to",
+                            "description": "Search for Incident Number by Assigned to user",
+                            "inputType": "text"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "configurableTabs": [],
+    "staticTabs": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [
+        "token.botframework.com",
+        "*.service-now.com",
+        "mefb30fe.azurewebsites.net"
+    ],
+    "webApplicationInfo": {
+        "id": "3fbb1ece-9ccc-447f-b167-cc4357f95b42",
+        "resource": "api://3fbb1ece-9ccc-447f-b167-cc4357f95b42"
+    }
+}
