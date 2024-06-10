@@ -47,7 +47,7 @@ Using Visual Studio:
 ![alt text](image-7.png) 
 Select Configuration & click on Add OAuth Connection Settings to enter the OAuth Connection details created in Step 1.  
 ![alt text](image-8.png)
->For the _Authorization URL_ use: Use https://<your ServiceNow instance url>/oauth_auth.do
+>For the _Authorization URL_ use: Use https://<your ServiceNow instance url>/oauth_auth.do  
 >For the _Token URL, Refresh URL & Token Exchange URL_ use Use https://<your ServiceNow instance url>/oauth_token.do
 
 Copy the bot, password & the OAuth Connection Name   
