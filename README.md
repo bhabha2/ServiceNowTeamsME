@@ -59,7 +59,8 @@ Copy the bot, password & the OAuth Connection Name
 `MicrosoftAppPassword=`  
 `connectionName=`  
 `SiteUrl=`  
-![alt text](image-5.png)
+![alt text](image-5.png)  
+
 10. Redeploy the solution using the deploy option from the Teams toolkit.  
 11. Click on Publish option from the Teams toolkit to create the App Package file.  
 12. Using a Teams environment with access to upload custom apps, upload the app package found appPackage\build folder.  
