@@ -48,6 +48,8 @@ Using Visual Studio:
 Select Configuration & click on Add OAuth Connection Settings to enter the OAuth Connection details created in Step 1.  
 ![alt text](image-8.png)
 ![alt text](SNOAuth-Step8.png)
+>Use the Generic OAuth 2 Service provider
+>Enter the OAuth connection details created in Step 1
 >For the _Authorization URL_ use: Use https://<your ServiceNow instance url>/oauth_auth.do  
 >For the _Token URL, Refresh URL & Token Exchange URL_ use Use https://<your ServiceNow instance url>/oauth_token.do
 
